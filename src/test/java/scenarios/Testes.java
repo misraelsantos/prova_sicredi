@@ -1,5 +1,7 @@
 package scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,7 +17,9 @@ public class Testes {
 	
 	@BeforeClass
 	public 	static void beforeClass() {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.get("https://www.grocerycrud.com/v1.x/demo/my_boss_is_in_a_hurry/bootstrap");
+		
 	}
 	
 	@Test
