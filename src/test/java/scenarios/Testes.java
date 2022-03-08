@@ -9,8 +9,9 @@ import pages.HomePage;
 
 public class Testes {
 	static ChromeDriver driver = new ChromeDriver();
-	HomePage pageHome = new HomePage();
-	AdicionarClientePage pageAdd = new AdicionarClientePage();
+	
+	HomePage pageHome = new HomePage(driver);
+	AdicionarClientePage pageAdd = new AdicionarClientePage(driver);
 	
 	@BeforeClass
 	public 	static void beforeClass() {
@@ -19,22 +20,22 @@ public class Testes {
 	
 	@Test
 	public void cadastrarCliente() {
-		pageHome.comboSwitch_theme(driver);
-		pageHome.botaoAddRecord(driver);
-		pageAdd.escreverNome(driver);
-		pageAdd.escreverLastName(driver);
-		pageAdd.escreverFirstName(driver);
-		pageAdd.escreverPhone(driver);
-		pageAdd.escreverAddressLine1(driver);
-		pageAdd.escreverAddressLine2(driver);
-		pageAdd.escreverCity(driver);
-		pageAdd.escreverState(driver);
-		pageAdd.escreverPostalCode(driver);
-		pageAdd.escreverCountry(driver);
-		pageAdd.escreverSalesRepEmployeeNumber(driver);
-		pageAdd.escreverCreditLimit(driver);
-		pageAdd.clicarBotaoSave(driver);
-		pageAdd.validarMensagemSucesso(driver);
+		pageHome.comboSwitch_theme();
+		pageHome.botaoAddRecord();
+		pageAdd.escreverNome();
+		pageAdd.escreverLastName();
+		pageAdd.escreverFirstName();
+		pageAdd.escreverPhone();
+		pageAdd.escreverAddressLine1();
+		pageAdd.escreverAddressLine2();
+		pageAdd.escreverCity();
+		pageAdd.escreverState();
+		pageAdd.escreverPostalCode();
+		pageAdd.escreverCountry();
+		pageAdd.escreverSalesRepEmployeeNumber();
+		pageAdd.escreverCreditLimit();
+		pageAdd.clicarBotaoSave();
+		pageAdd.validarMensagemSucesso();
 	}
 	@AfterClass	
 	public static void fechar() {
